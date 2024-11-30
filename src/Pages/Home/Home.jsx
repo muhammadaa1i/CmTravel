@@ -21,7 +21,7 @@ const Home = () => {
 
       <div className="header">
 
-        <div className='header-in pt-[30px] pb-[25px]  '>
+        <div className='header-in pt-[30px] pb-[25px] relative '>
 
           <div className="head-in max-w-7xl px-3 mx-auto flex items-center justify-between ">
 
@@ -33,7 +33,7 @@ const Home = () => {
 
           </div>
 
-          <button class="w-[50px] h-[50px] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 float-end mr-24 mt-[-50px] max-2xl:mr-16 max-xl:mr-10 max-lg:w-[40px] max-lg:h-[40px] ">
+          <button class="w-[50px] h-[50px] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 float-end right-2 top-[40px] fixed max-2xl:mr-16 max-xl:mr-10 max-lg:w-[40px] max-lg:h-[40px] ">
 
             <i className="fa-solid fa-bars text-3xl max-lg:text-2xl "></i>
 
