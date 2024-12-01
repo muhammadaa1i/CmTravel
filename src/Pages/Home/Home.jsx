@@ -33,7 +33,7 @@ const Home = () => {
 
           </div>
 
-          <button class="w-[50px] h-[50px] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 float-end right-2 top-[40px] fixed max-2xl:mr-16 max-xl:mr-10 max-lg:w-[40px] max-lg:h-[40px] ">
+          <button class="w-[50px] h-[50px] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-lg:w-[40px] max-lg:h-[40px] ">
 
             <i className="fa-solid fa-bars text-3xl max-lg:text-2xl "></i>
 
@@ -471,6 +471,129 @@ const Home = () => {
         </ul>
 
       </div>
+
+      <section className="table container py-5 m-auto">
+
+        <div className="jadval m-auto max-w-7xl px-3 mx-auto">
+
+          <h1 className="md:text-[30px] leading-10 text-[25px] text-black text-center font-semibold">Xizmatlar va narxlar</h1>
+          <p className="md:text-[17px] leading-[30px] text-[15px] text-[#666] text-center">O'zingizga ma'qul tarifni tanlang</p>
+
+          <div className="table-pr lg:w-[85%] m-auto py-5">
+
+            <table className="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className="p-5 w-[25%] text-left font-bold border border-solid border-[#ddd]">Features</th>
+                  <th className="p-5 w-[25%] text-center font-bold border border-solid border-[#ddd]">Daily</th>
+                  <th className="p-5 w-[25%] text-center font-bold border border-solid border-[#ddd]">Monthly</th>
+                  <th className="p-5 w-[25%] text-center font-bold border border-solid border-[#ddd]">Annually</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-solid border-[#ddd] p-5 text-left w-[25%]">10-hours training</td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-solid border-[#ddd] p-5 text-left w-[25%]">Coffee and lunch</td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]"></td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]"></td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-solid border-[#ddd] p-5 text-left w-[25%]">Course files to your email in PDF</td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-solid border-[#ddd] p-5 text-left w-[25%]">Individual consulting</td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-xmark text-red-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-solid border-[#ddd] p-5 text-left w-[25%]">Certificate</td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-xmark text-red-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-xmark text-red-600"></i>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <i className="fa-solid fa-circle-check text-green-600"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]"></td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <a className="inline-block bg-green-700 border-0 rounded-[5px] transition-all duration-[0.3s] hover:opacity-90 text-white" href="#contact">
+                      <button className="py-[15px] px-10 text-[17px]">Ko'proq</button>
+                    </a>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <a className="inline-block bg-green-700 border-0 rounded-[5px] transition-all duration-[0.3s] hover:opacity-90 text-white" href="#contact">
+                      <button className="py-[15px] px-10 text-[17px]">Ko'proq</button>
+                    </a>
+                  </td>
+                  <td className="border border-solid border-[#ddd] p-5 text-center w-[25%]">
+                    <a className="inline-block bg-green-700 border-0 rounded-[5px] transition-all duration-[0.3s] hover:opacity-90 text-white" href="#contact">
+                      <button className="py-[15px] px-10 text-[17px]">Ko'proq</button>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className='max-w-7xl px-3 mx-auto'>
+
+        <h1 className="lg:text-[33px] lg:py-[10px] md:text-[27px] md:py-8 py-5 text-[23px] font-semibold text-center">Mijozlar tomonidan berilgan savollar</h1>
+
+        <div className="md:py-5 mb-5">
+          <div className="md:p-6 p-3">
+            <main className="max-w-2xl mx-auto">
+              <div className="border-b border-gray-200">
+                <button className="w-full py-4 text-left focus:outline-none">
+                  <div class="plus flex items-center justify-between">
+                    <span class="font-semibold">Sizning mahsulotlaringizning saqlash muddati qancha?</span>
+                    <span class="plus-icon flex items-center justify-center w-5 h-5 rounded-[50%] transition-all duration-[0.3s]">+</span>
+                  </div>
+                </button>
+              </div>
+            </main>
+          </div>
+        </div>
+
+      </section>
 
     </div>
   )
