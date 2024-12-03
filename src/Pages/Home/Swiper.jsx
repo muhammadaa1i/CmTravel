@@ -19,9 +19,9 @@ export default function App() {
     return (
         <Swiper
             breakpoints={{
-                640: {
+                480: {
                     slidesPerView: 1,
-                    spaceBetween: 0,
+                    spaceBetween: 5,
                 },
                 768: {
                     slidesPerView: 1,
@@ -29,7 +29,7 @@ export default function App() {
                 },
                 1024: {
                     slidesPerView: 1,
-                    spaceBetween: 10,
+                    spaceBetween: 15,
                 },
             }}
             effect={'cards'}
@@ -40,7 +40,10 @@ export default function App() {
             {images.map((image, index) => (
                 <SwiperSlide key={index}>
                     <img
-                        className='max-w-[500px] w-full max-h-[350px] h-full max-xl:max-w-[400px] max-xl:max-h-[250px] max-md:max-w-[250px] max-md:max-h-[150px] '
+                        className="w-full h-auto max-w-[500px] max-h-[350px] 
+                                   md:max-w-[400px] md:max-h-[300px] 
+                                   sm:max-w-[300px] sm:max-h-[200px] 
+                                   object-contain mx-auto"
                         src={image}
                         alt={`slide-${index + 1}`} />
                 </SwiperSlide>
