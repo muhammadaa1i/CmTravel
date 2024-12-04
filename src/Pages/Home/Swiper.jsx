@@ -1,53 +1,86 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import './Swiper.css';
-import { EffectCards } from 'swiper/modules';
-import s1 from '../images/slider-1.webp';
-import s2 from '../images/slider-2.webp';
-import s3 from '../images/slider-3.webp';
-import s4 from '../images/slider-4.webp';
-import s5 from '../images/slider-5.webp';
-import s6 from '../images/slider-6.webp';
-import s7 from '../images/slider-7.webp';
-import s8 from '../images/slider-8.webp';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import s1 from "../images/slider-1.webp";
+import s2 from "../images/slider-2.webp";
+import s3 from "../images/slider-3.webp";
+import s4 from "../images/slider-4.webp";
+import s5 from "../images/slider-5.webp";
+import s6 from "../images/slider-6.webp";
+import s7 from "../images/slider-7.webp";
+import s8 from "../images/slider-8.webp";
 
-const images = [s1, s2, s3, s4, s5, s6, s7, s8];
+const Swiper = () => {
+    const settings = {
+        centerMode: true,
+        centerPadding: "8px",
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "20px",
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 992, 
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "30px",
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768, 
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "20px",
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "10px",
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
 
-export default function App() {
+    const images = [s1, s2, s3, s4, s5, s6, s7, s8];
+
     return (
-        <Swiper
-            breakpoints={{
-                480: {
-                    slidesPerView: 1,
-                    spaceBetween: 5,
-                },
-                768: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-                1024: {
-                    slidesPerView: 1,
-                    spaceBetween: 15,
-                },
-            }}
-            effect={'cards'}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-        >
-            {images.map((image, index) => (
-                <SwiperSlide key={index}>
-                    <img
-                        className="w-full h-auto max-w-[500px] max-h-[350px] 
-                                   md:max-w-[400px] md:max-h-[300px] 
-                                   sm:max-w-[300px] sm:max-h-[200px] 
-                                   object-contain mx-auto"
-                        src={image}
-                        alt={`slide-${index + 1}`} />
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <div className="max-w-5xl mx-auto mt-10">
+            <Slider {...settings}>
+                {images.map((image, index) => (
+                    <div key={index} className="p-2">
+                        <img
+                            src={image}
+                            alt={`Slide ${index + 1}`}
+                            className="w-[200px] h-[160px] rounded-md shadow-lg"
+                        />
+                    </div>
+                ))}
+            </Slider>
+        </div>
     );
-}
+};
+
+export default Swiper;
