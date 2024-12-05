@@ -18,7 +18,7 @@ const Swiper = () => {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 2000,
         infinite: true,
         responsive: [
             {
@@ -26,27 +26,27 @@ const Swiper = () => {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: "20px",
+                    centerPadding: "10px",
                     slidesToShow: 4,
                     slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 992, 
+                breakpoint: 992,
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: "30px",
+                    centerPadding: "0px",
                     slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 768, 
+                breakpoint: 768,
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: "20px",
+                    centerPadding: "0px",
                     slidesToShow: 2,
                     slidesToScroll: 1,
                 },
@@ -74,8 +74,7 @@ const Swiper = () => {
                         <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            className="w-[200px] h-[160px] rounded-md shadow-lg"
-                        />
+                            className="w-[200px] h-[160px] rounded-md shadow-lg m-auto " />
                     </div>
                 ))}
             </Slider>
