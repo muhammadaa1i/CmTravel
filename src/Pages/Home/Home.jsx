@@ -14,6 +14,7 @@ import c9 from '../images/collage-9.webp'
 import r1 from '../images/rest-card1.webp'
 import r2 from '../images/rest-card2.webp'
 import r3 from '../images/rest-card3.webp'
+import Accordion from './Accordion'
 
 const Home = () => {
   return (
@@ -582,12 +583,7 @@ const Home = () => {
           <div className="md:p-6 p-3">
             <main className="max-w-2xl mx-auto">
               <div className="border-b border-gray-200">
-                <button className="w-full py-4 text-left focus:outline-none">
-                  <div class="plus flex items-center justify-between">
-                    <span class="font-semibold">Sizning mahsulotlaringizning saqlash muddati qancha?</span>
-                    <span class="plus-icon flex items-center justify-center w-5 h-5 rounded-[50%] transition-all duration-[0.3s]">+</span>
-                  </div>
-                </button>
+                <Accordion />
               </div>
             </main>
           </div>
