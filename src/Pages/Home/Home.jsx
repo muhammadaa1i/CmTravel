@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className='main'>
 
-      <div className="header">
+      <div className="header h-[120vh]">
 
         <Header />
 

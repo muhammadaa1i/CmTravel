@@ -2,8 +2,8 @@ import React from 'react'
 
 const Buxoro = () => {
   return (
-    <div>
-        
+    <div id='buxoro'>
+        Buxoro
     </div>
   )
 }

@@ -1,13 +1,76 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Swiper from './Swiper'
 import logo1 from '../images/logo1.jpg'
+import uzb from '../images/uzb.webp'
+import rus from '../images/rus.png'
+import gb from '../images/gb.webp'
+import sl1 from '../images/slider-6.webp'
+import sl2 from '../images/slider-7.webp'
+import sl3 from '../images/sam.jpeg'
+import sl4 from '../images/tosh.jpg'
+import sl5 from '../images/slider-5.webp'
+import sl6 from '../images/xiva.jpg'
+import sl7 from '../images/tur.jpg'
+import sl8 from '../images/surx.jpg'
+import { useLocation } from 'react-router-dom'
+import BuxoroBg from '../images/bux.jpg'
+import SamarqandBg from '../images/sam.jpeg'
+import ToshkentBg from '../images/tosh.jpg'
+import ZominBg from '../images/slider-5.webp'
 
 const Header = () => {
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleHandler = () => {
+        setIsOpen((prev) => !prev)
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false)
+    }
+
+    const handleOutsideClick = (e) => {
+        if (e.target.closest(".right-menu") || e.target.closest(".menu")) return
+        closeMenu()
+    }
+
+    useEffect(() => {
+        if (isOpen) {
+            document.addEventListener("click", handleOutsideClick)
+        } else {
+            document.removeEventListener("click", handleOutsideClick)
+        }
+
+        return () => {
+            document.removeEventListener("click", handleOutsideClick)
+        }
+    }, [isOpen])
+
+    const location = useLocation()
+    const [bgImage, setBgImage] = useState()
+
+    useEffect(() => {
+        const path = location.pathname
+        if (path === '/buxoro') {
+            setBgImage(BuxoroBg)
+        }
+        else if (path === '/samarqand') {
+            setBgImage(SamarqandBg)
+        }
+        else if (path === '/toshkent'){
+            setBgImage(ToshkentBg)
+        }
+        else if(path === '/zomin'){
+            setBgImage(ZominBg)
+        }
+    })
+
     return (
         <div>
             <div className='header-in pt-[30px] pb-[25px] relative '>
 
-                <div className="head-in max-w-7xl px-3 mx-auto flex items-center justify-between ">
+                <div className="head-in max-w-7xl px-3 mx-auto flex items-center justify-between z-[90] ">
 
                     <a href="/">
 
@@ -17,11 +80,149 @@ const Header = () => {
 
                 </div>
 
-                <button class="w-[45px] h-[45px] flex justify-center items-center bg-white p-[6px] z-[99] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-sm:right-4 max-lg:w-[40px] max-lg:h-[40px] ">
+                <button
+                    onClick={toggleHandler}
+                    className={`menu w-[45px] h-[45px] flex justify-center items-center bg-white p-[6px] z-[99] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-sm:right-4 max-lg:w-[40px] max-lg:h-[40px] ${isOpen ? 'hidden' : ''} `}>
 
                     <i className="fa-solid fa-bars text-2xl"></i>
 
                 </button>
+
+                {isOpen && (
+                    <div className={`right-menu transform transition-transform duration-[3000ms] ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"} float-end w-[378px] h-auto bg-white z-[98] mt-[-80px]`}>
+
+                        <div className="py-4 px-6 border border-solid border-[#050505f] overflow-y-auto">
+
+                            <button
+                                onClick={closeMenu}
+                                className="text-[#00000072] leading-[1.5] w-6 h-6 flex items-center justify-center font-semibold">
+                                <i className="fa-solid fa-x"></i>
+                            </button>
+
+                        </div>
+
+                        <div className="p-6">
+
+                            <ul className="mb-[30px] flex items-center justify-center">
+
+                                <li style={{ backgroundImage: `url(${uzb})` }} className="text-white cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center w-[40px] rounded-[50%] hover:opacity-90">
+                                    <a href="/uz">uzb</a>
+                                </li>
+
+                                <li style={{ backgroundImage: `url(${rus})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center text-[#0000FE] w-[40px] rounded-[50%] hover:opacity-90">
+                                    <a href="/ru">ru</a>
+                                </li>
+
+                                <li style={{ backgroundImage: `url(${gb})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[20px] rounded-[50%] text-center text-[#DB261F] w-[40px] hover:opacity-90">
+
+                                </li>
+
+                            </ul>
+
+                            <ul className="flex flex-col justify-center p-0 m-0 list-none items-start">
+
+                                <li className="mb-[30px] flex justify-between">
+
+                                    <a class="place-link flex items-center" href="/">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl1} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Dam olish maskanlari</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px] flex justify-between float-left">
+
+                                    <a className="place-link flex items-center" href="/buxoro">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl2} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Buxoro</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/samarqand">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl3} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Samarqand</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/toshkent">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl4} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Toshkent</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/zomin">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl5} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Zomin</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/xiva">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl6} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Xiva</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/turkiston">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl7} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Turkiston</span>
+
+                                    </a>
+
+                                </li>
+
+                                <li className="mb-[30px]">
+
+                                    <a className="place-link flex items-center" href="/surxandaryo">
+
+                                        <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl8} />
+
+                                        <span className="text-black text-[20px] transition-all duration-[0.3s]">Surxandaryo</span>
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                )}
 
             </div>
 
@@ -82,6 +283,7 @@ const Header = () => {
                 </div>
 
             </div>
+
         </div>
     )
 }
