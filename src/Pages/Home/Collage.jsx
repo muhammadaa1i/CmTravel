@@ -11,71 +11,75 @@ import c9 from '../images/collage-9.webp'
 
 const Collage = () => {
     return (
-        <div className="collage-in max-w-7xl py-3 mx-auto">
+        <div className="collage py-5">
 
-            <h1 className="text-[25px] leading-7 py-[10px] font-semibold text-center md:text-[27px] md:leading-[34px] ">2,000 dan ortiq mijozlarimiz bizning xizmatlarimizdan mamnun</h1>
+            <div className="collage-in max-w-7xl py-3 mx-auto">
 
-            <p className="text-[16px] leading-5 pb-[23px] font-normal text-center text-[#333] md:text-[18px] md:leading-6 md:pb-[30px] ">Bizga ishonch bildirgan mijozlarimizning suratlaridan namunalar</p>
+                <h1 className="text-[25px] leading-7 py-[10px] font-semibold text-center md:text-[27px] md:leading-[34px] ">2,000 dan ortiq mijozlarimiz bizning xizmatlarimizdan mamnun</h1>
 
-            <div className="collage-box flex item-center justify-evenly flex-wrap gap-3 max-xl:gap-5 max-xl:mx-4 max-sm:gap-7 ">
+                <p className="text-[16px] leading-5 pb-[23px] font-normal text-center text-[#333] md:text-[18px] md:leading-6 md:pb-[30px] ">Bizga ishonch bildirgan mijozlarimizning suratlaridan namunalar</p>
 
-                <div className="collage-card1 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                <div className="collage-box flex item-center justify-evenly flex-wrap gap-3 max-xl:gap-5 max-xl:mx-4 max-sm:gap-7 ">
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c1} />
+                    <div className="collage-card1 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c1} />
 
-                <div className="collage-card2 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c2} />
+                    <div className="collage-card2 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c2} />
 
-                <div className="collage-card3 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <h3 class="pt-5 text-[17px] leading-6 text-center font-normal text-[#333]">Bu yerda sizning suratingiz bo’lishi mumkin edi</h3>
+                    <div className="collage-card3 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <h3 class="pt-5 text-[17px] leading-6 text-center font-normal text-[#333]">Bu yerda sizning suratingiz bo’lishi mumkin edi</h3>
 
-                <div className="collage-card4 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c3} />
+                    <div className="collage-card4 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c3} />
 
-                <div className="collage-card5 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c4} />
+                    <div className="collage-card5 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c4} />
 
-                <div className="collage-card6 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c5} />
+                    <div className="collage-card6 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c5} />
 
-                <div className="collage-card7 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c6} />
+                    <div className="collage-card7 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c6} />
 
-                <div className="collage-card8 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c7} />
+                    <div className="collage-card8 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c7} />
 
-                <div className="collage-card9 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c8} />
+                    <div className="collage-card9 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
 
-                </div>
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c8} />
 
-                <div className="collage-card10 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+                    </div>
 
-                    <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c9} />
+                    <div className="collage-card10 w-[220px] h-[140px] rounded-2 flex items-center justify-center shadow-[1px_1px_3px_3px_#a4a2a2] rounded-lg">
+
+                        <img style={{ color: 'transparent' }} className="w-[220px] h-[140px] object-cover trans" src={c9} />
+
+                    </div>
 
                 </div>
 

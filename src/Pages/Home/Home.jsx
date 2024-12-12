@@ -1,12 +1,10 @@
 import React from 'react'
-import './Home.css'
 import r1 from '../images/rest-card1.webp'
 import r2 from '../images/rest-card2.webp'
 import r3 from '../images/rest-card3.webp'
 import Accordion from './Accordion'
 import Form from './Form'
 import Header from './Header'
-import Hero from './Hero'
 import Collage from './Collage'
 import Section from './Section'
 import Table from './Table'
@@ -15,29 +13,11 @@ const Home = () => {
   return (
     <div className='main'>
 
-      <div className="header h-[120vh]">
+      <Header />
 
-        <Header />
+      <Collage />
 
-      </div>
-
-      <div className="hero pt-5">
-
-        <Hero />
-
-      </div>
-
-      <div className="collage py-5">
-
-        <Collage />
-
-      </div>
-
-      <div className="section my-[30px] py-5 pb-10 bg-no-repeat bg-center bg-cover">
-
-        <Section />
-
-      </div>
+      <Section />
 
       <div className="service max-w-7xl px-3 mx-auto">
 
