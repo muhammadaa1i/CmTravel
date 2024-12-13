@@ -35,8 +35,9 @@ const Header = () => {
     }
 
     const handleOutsideClick = (e) => {
-        if (e.target.closest(".right-menu") || e.target.closest(".menu")) return
-        closeMenu()
+        if (!e.target.closest(".menu")) {
+            closeMenu()
+        }
     }
 
     useEffect(() => {
@@ -122,7 +123,7 @@ const Header = () => {
                     </button>
 
                     {isOpen && (
-                        <div className={`right-menu transform transition-transform duration-[3000ms] ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"} float-end w-[378px] h-auto bg-white z-[98] mt-[-80px]`}>
+                        <div className={`right-menu fixed right-0 z-[50] transform transition-transform duration-[3000ms] ${isOpen ? "translate-x-0" : "translate-x-full"} overflow-y-auto float-end w-[378px] h-auto bg-white mt-[-80px]`}>
 
                             <div className="py-4 px-6 border border-solid border-[#050505f] overflow-y-auto">
 
@@ -259,7 +260,7 @@ const Header = () => {
 
                 </div>
 
-                <div className="header-in2 pb-[190px] md:pt-[25px] m-auto ">
+                <div className="header-in2 z-[10] pb-[190px] md:pt-[25px] m-auto ">
 
                     <div className="max-w-7xl px-10 mx-auto">
 
@@ -316,6 +317,7 @@ const Header = () => {
                     </div>
 
                 </div>
+
             </div>
 
             <div className='hero py-5'>
