@@ -30,25 +30,18 @@ const Header = () => {
         setIsOpen((prev) => !prev)
     }
 
-    const closeMenu = () => {
-        setIsOpen(false)
-    }
-
-    const handleOutsideClick = (e) => {
-        if (!e.target.closest(".menu")) {
-            closeMenu()
-        }
-    }
+    const closeMenu = () => setIsOpen(false)
 
     useEffect(() => {
         if (isOpen) {
-            document.addEventListener("click", handleOutsideClick)
-        } else {
-            document.removeEventListener("click", handleOutsideClick)
+            document.body.style.overflow = 'hidden'
+        }
+        else {
+            document.body.style.overflow = 'auto'
         }
 
         return () => {
-            document.removeEventListener("click", handleOutsideClick)
+            document.body.style.overflow = 'auto'
         }
     }, [isOpen])
 
@@ -92,12 +85,16 @@ const Header = () => {
         setBgImage(newBgImage)
     }, [location.pathname])
 
-
     return (
         <>
 
             <div
-                style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
                 className='header h-[120vh]'>
 
                 <div className='header-in pt-[30px] pb-[25px] relative '>
@@ -122,8 +119,13 @@ const Header = () => {
 
                     </button>
 
+                    <div
+                        className={`fixed inset-0 bg-black bg-opacity-50 z-40 ${isOpen ? "block" : "hidden"}`}
+                        onClick={closeMenu}>
+                    </div>
+
                     {isOpen && (
-                        <div className={`right-menu fixed right-0 z-[50] transform transition-transform duration-[3000ms] ${isOpen ? "translate-x-0" : "translate-x-full"} overflow-y-auto float-end w-[378px] h-auto bg-white mt-[-80px]`}>
+                        <div className={`right-menu fixed right-0 z-[50] transform transition-transform duration-[3000ms] ${isOpen ? "overflow-scroll" : "overflow-auto"} overflow-y-auto float-end w-[378px] h-[100vh] bg-white mt-[-80px]`}>
 
                             <div className="py-4 px-6 border border-solid border-[#050505f] overflow-y-auto">
 
@@ -135,9 +137,9 @@ const Header = () => {
 
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-4">
 
-                                <ul className="mb-[30px] flex items-center justify-center">
+                                <ul className="mb-[30px] flex items-center justify-center border-b border-[#050505f]">
 
                                     <li style={{ backgroundImage: `url(${uzb})` }} className="text-white cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center w-[40px] rounded-[50%] hover:opacity-90">
                                         <a href="/uz">uzb</a>
@@ -147,110 +149,38 @@ const Header = () => {
                                         <a href="/ru">ru</a>
                                     </li>
 
-                                    <li style={{ backgroundImage: `url(${gb})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[20px] rounded-[50%] text-center text-[#DB261F] w-[40px] hover:opacity-90">
-
+                                    <li style={{ backgroundImage: `url(${gb})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[12px] rounded-[50%] text-center text-[#DB261F] w-[40px] hover:opacity-90">
+                                        <a href="/eng">en</a>
                                     </li>
 
                                 </ul>
 
                                 <ul className="flex flex-col justify-center p-0 m-0 list-none items-start">
-
-                                    <li className="mb-[30px] flex justify-between">
-
-                                        <a class="place-link flex items-center" href="/">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl1} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Dam olish maskanlari</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px] flex justify-between float-left">
-
-                                        <a className="place-link flex items-center" href="/buxoro">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl2} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Buxoro</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/samarqand">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl3} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Samarqand</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/toshkent">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl4} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Toshkent</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/zomin">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl5} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Zomin</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/xiva">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl6} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Xiva</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/turkiston">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl7} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Turkiston</span>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li className="mb-[30px]">
-
-                                        <a className="place-link flex items-center" href="/surxandaryo">
-
-                                            <img className='mr-[25px] rounded-[50%] w-[100px] h-[100px]' src={sl8} />
-
-                                            <span className="text-black text-[20px] transition-all duration-[0.3s]">Surxandaryo</span>
-
-                                        </a>
-
-                                    </li>
-
+                                    {[
+                                        { path: '/', img: sl1, label: 'Dam olish maskanlari' },
+                                        { path: '/buxoro', img: sl2, label: 'Buxoro' },
+                                        { path: '/samarqand', img: sl3, label: 'Samarqand' },
+                                        { path: '/toshkent', img: sl4, label: 'Toshkent' },
+                                        { path: '/zomin', img: sl5, label: 'Zomin' },
+                                        { path: '/xiva', img: sl6, label: 'Xiva' },
+                                        { path: '/turkiston', img: sl7, label: 'Turkiston' },
+                                        { path: '/surxandaryo', img: sl8, label: 'Surxandaryo' },
+                                    ].map((menuItem) => (
+                                        <li
+                                            key={menuItem.path}
+                                            className={`mb-[30px] flex justify-between `}
+                                        >
+                                            <a className="place-link flex items-center" href={menuItem.path}>
+                                                <img
+                                                    className={`mr-[25px] rounded-[50%] w-[80px] h-[80px] transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'border-4 border-red-500 shadow-red-500 shadow-xl' : ''}`}
+                                                    src={menuItem.img}
+                                                />
+                                                <span className={`text-black text-2xl font-serif font-medium transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'text-red-600' : ''}`}>
+                                                    {menuItem.label}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    ))}
                                 </ul>
 
                             </div>
