@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Swiper from './Swiper'
+import Swiper from '../Swiper/Swiper'
 import logo1 from '../images/logo1.jpg'
 import uzb from '../images/uzb.webp'
 import rus from '../images/rus.png'
@@ -13,7 +13,7 @@ import sl6 from '../images/xiva.jpg'
 import sl7 from '../images/tur.jpg'
 import sl8 from '../images/surx.jpg'
 import d1 from '../images/d1.jpg'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import BuxoroBg from '../images/bux.jpg'
 import SamarqandBg from '../images/sam.jpeg'
 import ToshkentBg from '../images/tosh.jpg'
@@ -95,7 +95,7 @@ const Header = () => {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}
-                className='header h-[120vh]'>
+                className='header h-[80%]'>
 
                 <div className='header-in pt-[30px] pb-[25px] relative '>
 
@@ -170,15 +170,14 @@ const Header = () => {
                                             key={menuItem.path}
                                             className={`mb-[30px] flex justify-between `}
                                         >
-                                            <a className="place-link flex items-center" href={menuItem.path}>
+                                            <Link className="place-link flex items-center" to={menuItem.path}>
                                                 <img
                                                     className={`mr-[25px] rounded-[50%] w-[80px] h-[80px] transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'border-4 border-red-500 shadow-red-500 shadow-xl' : ''}`}
-                                                    src={menuItem.img}
-                                                />
+                                                    src={menuItem.img}/>
                                                 <span className={`text-black text-2xl font-serif font-medium transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'text-red-600' : ''}`}>
                                                     {menuItem.label}
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

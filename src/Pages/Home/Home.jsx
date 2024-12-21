@@ -2,12 +2,12 @@ import React from 'react'
 import r1 from '../images/rest-card1.webp'
 import r2 from '../images/rest-card2.webp'
 import r3 from '../images/rest-card3.webp'
-import Accordion from './Accordion'
-import Form from './Form'
-import Header from './Header'
-import Collage from './Collage'
-import Section from './Section'
-import Table from './Table'
+import Table from '../Table/Table'
+import Header from '../Header/Header'
+import Section from '../Section/Section'
+import Form from '../Form/Form'
+import Accordion from '../Accordion/Accordion'
+import Collage from '../Collage/Collage'
 
 const Home = () => {
   return (
