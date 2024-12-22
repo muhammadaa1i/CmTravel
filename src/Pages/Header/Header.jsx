@@ -80,7 +80,8 @@ const Header = () => {
             newBgImage = d1
             newVideo = mainvideo
         }
-
+        
+        setIsOpen(false)
         setVideo(newVideo)
         setBgImage(newBgImage)
     }, [location.pathname])
@@ -113,7 +114,7 @@ const Header = () => {
 
                     <button
                         onClick={toggleHandler}
-                        className={`menu w-[45px] h-[45px] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-sm:right-4 max-lg:w-[40px] max-lg:h-[40px] ${isOpen ? 'hidden' : ''} `}>
+                        className={`menu w-[45px] h-[45px] z-[90] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-sm:right-4 max-lg:w-[40px] max-lg:h-[40px] ${isOpen ? 'hidden' : ''} `}>
 
                         <i className="fa-solid fa-bars text-2xl"></i>
 
@@ -125,7 +126,7 @@ const Header = () => {
                     </div>
 
                     {isOpen && (
-                        <div className={`right-menu fixed right-0 z-[50] transform transition-transform duration-[3000ms] ${isOpen ? "overflow-scroll" : "overflow-auto"} overflow-y-auto float-end w-[378px] h-[100vh] bg-white mt-[-80px]`}>
+                        <div className={`right-menu fixed right-0 z-[50] max-sm:w-[90%] transform transition-transform duration-[3000ms] ${isOpen ? "overflow-scroll" : "overflow-auto"} overflow-y-auto float-end w-[378px] h-[100vh] bg-white mt-[-80px]`}>
 
                             <div className="py-4 px-6 border border-solid border-[#050505f] overflow-y-auto">
 
@@ -172,7 +173,7 @@ const Header = () => {
                                         >
                                             <Link className="place-link flex items-center" to={menuItem.path}>
                                                 <img
-                                                    className={`mr-[25px] rounded-[50%] w-[80px] h-[80px] transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'border-4 border-red-500 shadow-red-500 shadow-xl' : ''}`}
+                                                    className={`mr-[25px] rounded-[50%] w-[80px] h-[80px] transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'border-4 border-red-500 shadow-red-500 shadow-lg animate-border-pulse ' : ''}`}
                                                     src={menuItem.img}/>
                                                 <span className={`text-black text-2xl font-serif font-medium transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'text-red-600' : ''}`}>
                                                     {menuItem.label}

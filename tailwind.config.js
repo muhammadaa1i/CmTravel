@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'border-pulse': 'borderPulse 1.5s ease-in-out infinite',
+      },
+      keyframes: {
+        borderPulse: {
+          '50%': { borderColor: '#f87171' }, 
+          '100%': { borderColor: '#ef4444' }
+        }
+    }
+  }
   },
   plugins: [],
 }

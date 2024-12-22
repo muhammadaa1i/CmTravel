@@ -15,7 +15,7 @@ const Collage = () => {
 
             <div className="collage-in max-w-7xl py-3 mx-auto">
 
-                <h1 className="text-[25px] leading-7 py-[10px] font-semibold text-center md:text-[27px] md:leading-[34px] ">2,000 dan ortiq mijozlarimiz bizning xizmatlarimizdan mamnun</h1>
+                <h1 className="text-[25px] leading-7 py-[10px] font-semibold text-center md:text-[27px] md:leading-[34px] max-sm:px-1">2,000 dan ortiq mijozlarimiz bizning xizmatlarimizdan mamnun</h1>
 
                 <p className="text-[16px] leading-5 pb-[23px] font-normal text-center text-[#333] md:text-[18px] md:leading-6 md:pb-[30px] ">Bizga ishonch bildirgan mijozlarimizning suratlaridan namunalar</p>
 
