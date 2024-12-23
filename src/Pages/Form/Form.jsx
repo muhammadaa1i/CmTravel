@@ -46,7 +46,7 @@ const Form = () => {
     }
 
     return (
-        <div className='container flex flex-row'>
+        <div className='container flex flex-row max-md:flex-col'>
 
             <div className="contact-left lg:w-[50%] lg:m-0 mb-6 w-full bg-black lg:rounded-tl-lg lg:rounded-bl-lg rounded-lg md:p-[30px] max-sm:w-[90%] p-4 shadow-[0_2px_4px_#0000001a]">
 
@@ -74,7 +74,7 @@ const Form = () => {
 
             </div>
 
-            <div className="contact-right lg:w-[50%] w-full bg-white lg:pt-[58px] pt-0 md:px-[30px] px-3 shadow-[0_2px_4px_#0000001a] rounded-tr-lg rounded-br-lg">
+            <div className="contact-right lg:w-[50%] w-full bg-white lg:pt-[58px] pt-0 md:px-[30px] px-3 shadow-[0_2px_4px_#0000001a] rounded-tr-lg rounded-br-lg max-sm:w-[90%]">
 
                 <p className="text-[17px] py-[5px] font-normal lg:text-left text-center">
                     Mutaxassislarimizdan barcha savollaringizga javob olmoqchi bo’lsangiz quyidagi manzilga tashrif buyuring yoki bizga qo’ng’iroq qiling
@@ -97,9 +97,12 @@ const Form = () => {
                     </li>
 
                     <li className="flex items-center gap-[10px] py-[5px]">
-                        <i class="fa-solid fa-envelope"></i>
-                        <a target='blank' href='mailto:muhammadaalin01@gmail.com' class="text-[17px] py-[5px] font-normal">
+                        <i className="fa-solid fa-envelope"></i>
+                        <a target='blank' href='mailto:muhammadaalin01@gmail.com' className="text-[17px] py-[5px] font-normal max-sm:hidden">
                             muhammadaalin01@gmail.com
+                        </a>
+                        <a target='blank' href='mailto:muhammadaalin01@gmail.com' className="text-[17px] mb-1 font-normal hidden max-sm:block">
+                            e-mail
                         </a>
                     </li>
 

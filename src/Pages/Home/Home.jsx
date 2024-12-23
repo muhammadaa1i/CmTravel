@@ -6,6 +6,7 @@ import Form from '../Form/Form'
 import Accordion from '../Accordion/Accordion'
 import Collage from '../Collage/Collage'
 import Service from '../Service/Service'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
         </div>
 
       </section>
+
       <section id="contact" className="md:py-10 py-5 px-5 bg-[#f9f9f9]">
         <div className="max-w-7xl px-3 mx-auto">
           <div className="md:w-[80%] w-[95%] flex lg:flex-row flex-col items-center justify-center mx-auto">
@@ -39,6 +41,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Footer/>
 
     </div>
   )

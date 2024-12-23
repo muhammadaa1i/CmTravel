@@ -21,9 +21,15 @@ import ZominBg from '../images/zomin.jpg'
 import XivaBg from '../images/xiva.jpg'
 import TurkistonBg from '../images/tur.jpg'
 import SurxandaryoBg from '../images/surxandaryo.jpg'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
 
+    const { t, i18n } = useTranslation()
+    const handleChange = (e) => {
+        const selectedLanguage = e.target.value;
+        i18n.changeLanguage(selectedLanguage)
+    }
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleHandler = () => {
@@ -80,7 +86,7 @@ const Header = () => {
             newBgImage = d1
             newVideo = mainvideo
         }
-        
+
         setIsOpen(false)
         setVideo(newVideo)
         setBgImage(newBgImage)
@@ -88,7 +94,6 @@ const Header = () => {
 
     return (
         <>
-
             <div
                 style={{
                     backgroundImage: `url(${bgImage})`,
@@ -115,9 +120,7 @@ const Header = () => {
                     <button
                         onClick={toggleHandler}
                         className={`menu w-[45px] h-[45px] z-[90] flex justify-center items-center bg-white p-[6px] text-[23px] border-0 shadow-[1px_1px_1px_1px_#747373] rounded-[50px] hover:opacity-90 right-2 top-[40px] fixed box-border 2xl:right-16 xl:right-10 max-xl:right-10 max-md:right-8 max-sm:right-4 max-lg:w-[40px] max-lg:h-[40px] ${isOpen ? 'hidden' : ''} `}>
-
                         <i className="fa-solid fa-bars text-2xl"></i>
-
                     </button>
 
                     <div
@@ -142,17 +145,29 @@ const Header = () => {
 
                                 <ul className="mb-[30px] flex items-center justify-center border-b border-[#050505f]">
 
-                                    <li style={{ backgroundImage: `url(${uzb})` }} className="text-white cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center w-[40px] rounded-[50%] hover:opacity-90">
-                                        <a href="/uz">uzb</a>
-                                    </li>
+                                    <button
+                                        onClick={() => {
+                                            handleChange({ target: { value: 'uz' } })
+                                            setIsOpen(false)
+                                        }}
+                                        style={{ backgroundImage: `url(${uzb})` }} className="uz cursor-pointer m-[25px] bg-no-repeat bg-center bg-cover py-[10px] text-center w-[40px] h-[40px] rounded-[50%] hover:opacity-90">
+                                    </button>
 
-                                    <li style={{ backgroundImage: `url(${rus})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center text-[#0000FE] w-[40px] rounded-[50%] hover:opacity-90">
-                                        <a href="/ru">ru</a>
-                                    </li>
+                                    <button
+                                        onClick={() => {
+                                            handleChange({ target: { value: 'ru' } })
+                                            setIsOpen(false)
+                                        }}
+                                        style={{ backgroundImage: `url(${rus})` }} className="ru cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[10px] text-center text-[#0000FE] w-[40px] h-[40px] rounded-[50%] hover:opacity-90">
+                                    </button>
 
-                                    <li style={{ backgroundImage: `url(${gb})` }} className="cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[12px] rounded-[50%] text-center text-[#DB261F] w-[40px] hover:opacity-90">
-                                        <a href="/eng">en</a>
-                                    </li>
+                                    <button
+                                        onClick={() => {
+                                            handleChange({ target: { value: 'en' } })
+                                            setIsOpen(false)
+                                        }}
+                                        style={{ backgroundImage: `url(${gb})` }} className="en cursor-pointer bg-no-repeat bg-center bg-cover m-[25px] py-[12px] rounded-[50%] text-center text-[#DB261F] w-[40px] h-[40px] hover:opacity-90">
+                                    </button>
 
                                 </ul>
 
@@ -174,7 +189,7 @@ const Header = () => {
                                             <Link className="place-link flex items-center" to={menuItem.path}>
                                                 <img
                                                     className={`mr-[25px] rounded-[50%] w-[80px] h-[80px] transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'border-4 border-red-500 shadow-red-500 shadow-lg animate-border-pulse ' : ''}`}
-                                                    src={menuItem.img}/>
+                                                    src={menuItem.img} />
                                                 <span className={`text-black text-2xl font-serif font-medium transition-all duration-[0.3s] ${location.pathname === menuItem.path ? 'text-red-600' : ''}`}>
                                                     {menuItem.label}
                                                 </span>
@@ -194,7 +209,7 @@ const Header = () => {
 
                     <div className="max-w-7xl px-10 mx-auto">
 
-                        <h1 className="w-full text-center text-[28px] leading-[35px] text-white font-medium mb-[10px] lg:w-[60%] lg:text-[42px] lg:text-left md:text-[36px] md:leading-[55px] ">Oilaviy yoki yaqinlaringiz bilan maroqli hordiq chiqaring</h1>
+                        <h1 className="w-full text-center text-[28px] leading-[35px] text-white font-medium mb-[10px] lg:w-[60%] lg:text-[42px] lg:text-left md:text-[36px] md:leading-[55px] ">{t('Oilaviy yoki yaqinlaringiz bilan maroqli hordiq chiqaring')}</h1>
 
                         <p className="w-full text-center text-[17px] leading-[17px] mb-[10px] text-white lg:w-[60%] lg:text-left md:text-[18px] md:leading-[25px] md:mb-[30px] ">Bepul konsultatsiya uchun ro’yxatdan o’ting</p>
 
