@@ -23,13 +23,15 @@ import TurkistonBg from '../images/tur.jpg'
 import SurxandaryoBg from '../images/surxandaryo.jpg'
 import { useTranslation } from 'react-i18next'
 
+
+
 const Header = () => {
 
-    const { t, i18n } = useTranslation()
+    const { t, i18n } = useTranslation();
     const handleChange = (e) => {
         const selectedLanguage = e.target.value;
-        i18n.changeLanguage(selectedLanguage)
-    }
+        i18n.changeLanguage(selectedLanguage);
+    };
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleHandler = () => {
