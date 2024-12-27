@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../images/logo1.jpg'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -39,13 +40,27 @@ const Footer = () => {
 
                 <li className="md:px-[30px] md:w-[30%] w-[90%] flex items-center flex-col justify-center md:self-start">
                     <h1 className="text-[24px] font-semibold pt-[25px]">Yo’nalishlar</h1>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Buxoro</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Toshkent</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Samarqand</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Zomin</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Xiva</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Turkiston</a>
-                    <a href="#" className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">Surxondaryo</a>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/buxoro' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Buxoro
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/samarqand' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Samarqand
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/toshkent' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Toshkent
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/zomin' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Zomin
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/xiva' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Xiva
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/turkiston' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Turkiston
+                    </Link>
+                    <Link onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} to='/surxandaryo' className="text-[17px] pt-[10px] text-[#333] hover:opacity-90">
+                        Surxondaryo
+                    </Link>
                 </li>
 
             </ul>

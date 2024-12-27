@@ -22,16 +22,15 @@ import XivaBg from '../images/xiva.jpg'
 import TurkistonBg from '../images/tur.jpg'
 import SurxandaryoBg from '../images/surxandaryo.jpg'
 import { useTranslation } from 'react-i18next'
-
-
+import i18n from '../../i18next'
 
 const Header = () => {
 
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation()
     const handleChange = (e) => {
-        const selectedLanguage = e.target.value;
-        i18n.changeLanguage(selectedLanguage);
-    };
+        const selectedLanguage = e.target.value
+        i18n.changeLanguage(selectedLanguage)
+    }
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleHandler = () => {
@@ -175,14 +174,14 @@ const Header = () => {
 
                                 <ul className="flex flex-col justify-center p-0 m-0 list-none items-start">
                                     {[
-                                        { path: '/', img: sl1, label: 'Dam olish maskanlari' },
-                                        { path: '/buxoro', img: sl2, label: 'Buxoro' },
-                                        { path: '/samarqand', img: sl3, label: 'Samarqand' },
-                                        { path: '/toshkent', img: sl4, label: 'Toshkent' },
-                                        { path: '/zomin', img: sl5, label: 'Zomin' },
-                                        { path: '/xiva', img: sl6, label: 'Xiva' },
-                                        { path: '/turkiston', img: sl7, label: 'Turkiston' },
-                                        { path: '/surxandaryo', img: sl8, label: 'Surxandaryo' },
+                                        { path: '/', img: sl1, label: t('Dam olish maskanlari') },
+                                        { path: '/buxoro', img: sl2, label: t('Buxoro') },
+                                        { path: '/samarqand', img: sl3, label: t('Samarqand') },
+                                        { path: '/toshkent', img: sl4, label: t('Toshkent') },
+                                        { path: '/zomin', img: sl5, label: t('Zomin') },
+                                        { path: '/xiva', img: sl6, label: t('Xiva') },
+                                        { path: '/turkiston', img: sl7, label: t('Turkiston') },
+                                        { path: '/surxandaryo', img: sl8, label: t('Surxandaryo') },
                                     ].map((menuItem) => (
                                         <li
                                             key={menuItem.path}
@@ -213,31 +212,31 @@ const Header = () => {
 
                         <h1 className="w-full text-center text-[28px] leading-[35px] text-white font-medium mb-[10px] lg:w-[60%] lg:text-[42px] lg:text-left md:text-[36px] md:leading-[55px] ">{t('Oilaviy yoki yaqinlaringiz bilan maroqli hordiq chiqaring')}</h1>
 
-                        <p className="w-full text-center text-[17px] leading-[17px] mb-[10px] text-white lg:w-[60%] lg:text-left md:text-[18px] md:leading-[25px] md:mb-[30px] ">Bepul konsultatsiya uchun ro’yxatdan o’ting</p>
+                        <p className="w-full text-center text-[17px] leading-[17px] mb-[10px] text-white lg:w-[60%] lg:text-left md:text-[18px] md:leading-[25px] md:mb-[30px] ">{t('Bepul konsultatsiya uchun ro’yxatdan o’ting')}</p>
 
                         <ul className="flex flex-wrap items-center justify-center p-0 m-0 list-none lg:justify-start ">
 
                             <li className="card1 bg-white mr-5 mb-[30px] w-[270px] h-[120px] p-[15px] rounded-[8px] text-center">
 
-                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">Tajriba</h1>
+                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">{t('Tajriba')}</h1>
 
-                                <p className="text-[16px] text[#666] font-normal">10 yildan ortiq tajribaga ega jamoa</p>
+                                <p className="text-[16px] text[#666] font-normal">{t('10 yildan ortiq tajribaga ega jamoa')}</p>
 
                             </li>
 
                             <li className="card2 bg-white mr-5 mb-[30px] w-[270px] h-[120px] p-[15px] rounded-[8px] text-center">
 
-                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">Qulay narxlar</h1>
+                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">{t('Qulay narxlar')}</h1>
 
-                                <p className="text-[16px] text[#666] font-normal">7 kunlik sayohat $100 dan boshlanadi</p>
+                                <p className="text-[16px] text[#666] font-normal">{t('7 kunlik sayohat $100 dan boshlanadi')}</p>
 
                             </li>
 
                             <li className="card-el bg-white mr-5 mb-[30px] w-[270px] h-[120px] p-[15px] rounded-[8px] text-center">
 
-                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">Keng tanlov</h1>
+                                <h1 className="text-[24px] pt-[10px] font-semibold text-[#333]">{t('Keng tanlov')}</h1>
 
-                                <p className="text-[16px] text[#666] font-normal">Sayohatingiz davomida 10dan...</p>
+                                <p className="text-[16px] text[#666] font-normal">{t('Sayohatingiz davomida 10dan...')}</p>
 
                             </li>
 
@@ -247,13 +246,13 @@ const Header = () => {
 
                             <li className="btn1 mb-[30px] bg-[#ff9548] py-[15px] px-10 transition-all duration-[0.3s] rounded-[5px] hover:shadow-[1px_1px_5px_5px_#ffffff6c] md:mr-[50px] ">
 
-                                <a className="hero-btn text-white text-[17px]" href="#contact">Bepul konsultatsiya</a>
+                                <a className="hero-btn text-white text-[17px]" href="#contact">{t('Bepul konsultatsiya')}</a>
 
                             </li>
 
                             <li className="btn2 mb-[30px] bg-[#5ec2ec] py-[15px] px-10 transition-all duration-[0.3s] rounded-[5px] hover:shadow-[1px_1px_5px_5px_#ffffff6c] md:mr-[50px] ">
 
-                                <a className="hero-btn text-white text-[17px]" href="#contact">Tayyor tur paketlar</a>
+                                <a className="hero-btn text-white text-[17px]" href="#contact">{t('Tayyor tur paketlar')}</a>
 
                             </li>
 
@@ -271,7 +270,7 @@ const Header = () => {
 
                 <div className="hero-in max-w-7xl py-3 mx-auto">
 
-                    <h1 className="w-[99%] text-[23px] mb-5 font-semibold text-center lg:text-[30px] md:text-[27px] ">Biz haqimizda quyidagi video orqali batafsil bilib oling</h1>
+                    <h1 className="w-[99%] text-[23px] mb-5 font-semibold text-center lg:text-[30px] md:text-[27px] ">{t('Biz haqimizda quyidagi video orqali batafsil bilib oling')}</h1>
 
                     <div className="w-[90%] h-[400px] mx-auto flex items-center justify-center lg:w-[60%] ">
 
