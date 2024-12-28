@@ -38,7 +38,7 @@ const Table = () => {
                                 </td>
                             </tr>
                             <tr>
-                                <td className="border border-solid border-[#ddd] p-5 text-left w-[25%] max-md:w-[15%]">Kofe va tushlik</td>
+                                <td className="border border-solid border-[#ddd] p-5 text-left w-[25%] max-md:w-[15%]">{t('Kofe va tushlik')}</td>
                                 <td className="border border-solid border-[#ddd] p-5 text-center w-[25%] max-md:w-[15%]"></td>
                                 <td className="border border-solid border-[#ddd] p-5 text-center w-[25%] max-md:w-[15%]"></td>
                                 <td className="border border-solid border-[#ddd] p-5 text-center w-[25%] max-md:w-[15%]">

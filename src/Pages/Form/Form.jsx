@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -45,12 +46,14 @@ const Form = () => {
         }
     }
 
+    const { t } = useTranslation()
+
     return (
         <div className='container flex flex-row max-md:flex-col'>
 
             <div className="contact-left lg:w-[50%] lg:m-0 mb-6 w-full bg-black lg:rounded-tl-lg lg:rounded-bl-lg rounded-lg md:p-[30px] max-sm:w-[90%] p-4 shadow-[0_2px_4px_#0000001a]">
 
-                <h2 className="text-[29px] font-semibold m-5 text-white">Savollaringiz qoldimi?</h2>
+                <h2 className="text-[29px] font-semibold m-5 text-white">{t('Savollaringiz qoldimi?')}</h2>
 
                 <form onSubmit={SendMessage} className="flex flex-col gap-[15px]">
 
@@ -64,11 +67,11 @@ const Form = () => {
 
                         <input className="w-5" required type="checkbox" checked></input>
 
-                        <p className="text-[14px] text-white">Offerta shartlariga roziman</p>
+                        <p className="text-[14px] text-white">{t('Offerta shartlariga roziman')}</p>
 
                     </label>
 
-                    <button type='submit' class="lg:mr-auto mx-auto bg-orange-400 outline-none border-none text-white border-0 rounded-sm py-[10px] px-5 text-base cursor-pointer transition-all duration-[0.3s] hover:shadow-[1px_1px_5px_5px_#ffffff6c]">Yuborish</button>
+                    <button type='submit' class="lg:mr-auto mx-auto bg-orange-400 outline-none border-none text-white border-0 rounded-sm py-[10px] px-5 text-base cursor-pointer transition-all duration-[0.3s] hover:shadow-[1px_1px_5px_5px_#ffffff6c]">{t('Yuborish')}</button>
 
                 </form>
 
@@ -77,7 +80,7 @@ const Form = () => {
             <div className="contact-right lg:w-[50%] w-full bg-white lg:pt-[58px] pt-0 md:px-[30px] px-3 shadow-[0_2px_4px_#0000001a] rounded-tr-lg rounded-br-lg max-sm:w-[90%]">
 
                 <p className="text-[17px] py-[5px] font-normal lg:text-left text-center">
-                    Mutaxassislarimizdan barcha savollaringizga javob olmoqchi bo’lsangiz quyidagi manzilga tashrif buyuring yoki bizga qo’ng’iroq qiling
+                    {t('Mutaxassislarimizdan barcha savollaringizga javob olmoqchi bo’lsangiz quyidagi manzilga tashrif buyuring yoki bizga qo’ng’iroq qiling')}
                 </p>
 
                 <div className="rounded-lg">
@@ -88,7 +91,7 @@ const Form = () => {
 
                     <li className="flex items-center gap-[10px] py-[5px]">
                         <i className="fa-solid fa-location-dot text-xl"></i>
-                        <span className="text-[17px] py-[5px] font-normal">Toshkent shahar, Manzil ko’chasi 1a</span>
+                        <span className="text-[17px] py-[5px] font-normal">{t('Toshkent shahar, Manzil ko’chasi 1a')}</span>
                     </li>
 
                     <li className="flex items-center gap-[10px] py-[5px]">
