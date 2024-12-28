@@ -172,7 +172,7 @@ const Header = () => {
 
                                 </ul>
 
-                                <ul className="flex flex-col justify-center p-0 m-0 list-none items-start">
+                                <ul onClick={() => window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 })} className="flex flex-col justify-center p-0 m-0 list-none items-start">
                                     {[
                                         { path: '/', img: sl1, label: t('Dam olish maskanlari') },
                                         { path: '/buxoro', img: sl2, label: t('Buxoro') },
